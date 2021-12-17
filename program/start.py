@@ -148,7 +148,7 @@ async def new_chat(c: Client, m: Message):
         if member.id == bot_id:
             return await m.reply(
                 "❤️ **Thanks for adding me to the Group !**\n\n"
-                "**Promote me as administrator of the Group, otherwise I will not be able to work properly, and don't forget to type /userbotjoin for invite the assistant.**\n\n"
+                "**Promote me as administrator of the Group, otherwise I will not be able to work properly**\n\n"
                 "**Once done, type** /reload",
                 reply_markup=InlineKeyboardMarkup(
                     [
@@ -158,6 +158,9 @@ async def new_chat(c: Client, m: Message):
                         ],
                         [
                             InlineKeyboardButton("👤 Assistant", url=f"https://t.me/{ass_uname}")
+                        ],
+                                                [
+                            InlineKeyboardButton("Owner", url=f"https://t.me/Narutoo06")
                         ]
                     ]
                 )
