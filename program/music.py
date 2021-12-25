@@ -82,7 +82,7 @@ async def play(c: Client, m: Message):
         b = await c.get_chat_member(chat_id, ubot)
         if b.status == "kicked":
             await m.reply_text(
-                f"@{ASSISTANT_NAME} **is banned in group** {m.chat.title}\n\n» **unban the userbot first if you want to use this bot.**"
+                f"@{ASSISTANT_NAME} **is banned in group** {m.chat.title}\n\n» **unban Kurama Music Assistant first if you want to use this bot.**"
             )
             return
     except UserNotParticipant:
@@ -90,7 +90,7 @@ async def play(c: Client, m: Message):
             try:
                 await user.join_chat(m.chat.username)
             except Exception as e:
-                await m.reply_text(f"❌ **userbot failed to join**\n\n**reason**: `{e}`")
+                await m.reply_text(f"❌ **Kurama Music Assistant failed to join**\n\n**reason**: `{e}`")
                 return
         else:
             try:
@@ -106,7 +106,7 @@ async def play(c: Client, m: Message):
                 pass
             except Exception as e:
                 return await m.reply_text(
-                    f"❌ **userbot failed to join**\n\n**reason**: `{e}`"
+                    f"❌ **Kurama Music Assistant failed to join**\n\n**reason**: `{e}`"
                 )
     if replied:
         if replied.audio or replied.voice:
